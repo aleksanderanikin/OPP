@@ -143,7 +143,7 @@
 //     }
 // }
 
-// const b1 = new Book("Мертвые души", "Гооголь", 1835);
+// const b1 = new Book("Мертвые души", "Гоголь", 1835);
 // console.log(b1)
 
 // const b2 = new Book("Капитанская дочка", "Пушкин", -1836);
@@ -186,8 +186,6 @@ class Student {
     }
 }
 
-class 
-
 
 const s1 = new Student("Анна", 21)
 s1.addGrade(5)
@@ -199,3 +197,37 @@ s1.addGrade(5)
 console.log(s1)
 
 console.log(s1.getAverageGrade())
+
+
+
+class GoodStudent extends Student {
+    constructor(name, age, faculty, grades) {
+        super(name, age, grades),
+            this.faculty = faculty
+    }
+    addGrade(grades) {
+        if (this.grades < 5) {
+            this.grades++;
+            console.log(`Теперь у меня ${this.grades}`)
+        }
+        else if (this.grades > 5) {
+            console.log('Больше 5 нельзя')
+        }
+
+        else if (this.grades <= 0) {
+            console.log("Такой оценки нет существует")
+        }
+
+        else {
+            console.log("Это лучша оцекнка")
+        }
+    }
+}
+
+
+const s2 = new GoodStudent("Андрей", 19, "Программист")
+
+s2.addGrade(2)
+s2.addGrade(2)
+
+console.log(s2)
